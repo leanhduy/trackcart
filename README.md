@@ -13,6 +13,7 @@ The main tech stack used in this project includes:
 - PostgreSQL for the database
 
 ## Features
+
 The main features for this application will be:
 
 - Add/Remove/Update a Wallet
@@ -23,17 +24,17 @@ The main features for this application will be:
 - Signup / Signin using username/password and OAuth (Google, Facebook)
 
 ## Directory Structure
+
 trackcart /
 &nbsp;&nbsp;&nbsp;&nbsp;|— frontend (Vue application)
 &nbsp;&nbsp;&nbsp;&nbsp;|— backend (Django application)
 
-
 ## Installation and Setup
 
 1. Clone the repository:
-git clone https://github.com/username/trackcart.git
+   git clone https://github.com/username/trackcart.git
 2. Change into the project directory:
-cd trackcart
+   cd trackcart
 3. Set up the backend:
 
 - Create a virtual environment and activate it:
@@ -79,9 +80,44 @@ cd trackcart
 
 5. Visit `http://localhost:8080` in your browser to view the application.
 
-## License
+## Architecture
 
-This project is licensed under the [MIT License](LICENSE).
-
-
-
+```
+                    +--------------------------------+
+                    |                                |
+                    |                                |
+                    |             VUE APP            |
+                    |       Pinia (State Mgr)        |
+                    |    Bootstrap (CSS Framework)   |
+                    |                                |
+                    |                                |
+                    +--------------------------------+
+                                    |
+                                    |
+                                    |
+                    +--------------------------------+
+                    |           API Endpoints        |
+                    +--------------------------------+
+                                    |
+                                    |
+                                    |
+                     +----------------------------+
+                     |    Django/DRF Application  |
+                     |                            |
+        +------------|----------------------------|-----------+
+        |            |                            |           |
++---------------+ +---------------+  +---------------+  +---------------+
+| Authentication| |   Expenses    |  |  Categories   |  |    Wallets    |
++---------------+ +---------------+  +---------------+  +---------------+
+|  - Login      | |   - Create    |  |  - Create     |  |  - Create     |
+|  - Register   | |   - Read      |  |  - Read       |  |  - Read       |
+|  - Logout     | |   - Update    |  |  - Update     |  |  - Update     |
+|  - OAuth      | |   - Delete    |  |  - Delete     |  |  - Delete     |
++---------------+ +---------------+  +---------------+  +---------------+
+                                    |
+                                    |
+                                    |
+                           +----------------+
+                           |  Postgres DB   |
+                           +----------------+
+```
