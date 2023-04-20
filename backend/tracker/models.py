@@ -23,6 +23,9 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "Categories"
+        
+    def __str__(self) -> str:
+        return self.name
 
 
 class Currency(models.Model):
@@ -31,6 +34,9 @@ class Currency(models.Model):
 
     class Meta:
         verbose_name_plural = "Currencies"
+    
+    def __str__(self) -> str:
+        return self.name
 
 
 class Wallet(models.Model):
@@ -41,6 +47,9 @@ class Wallet(models.Model):
 
     class Meta:
         verbose_name_plural = "Wallets"
+        
+    def __str__(self) -> str:
+        return self.name
 
 
 class Transaction(models.Model):
@@ -53,3 +62,6 @@ class Transaction(models.Model):
 
     class Meta:
         verbose_name_plural = "Transactions"
+        
+    def __str__(self) -> str:
+        return self.name
