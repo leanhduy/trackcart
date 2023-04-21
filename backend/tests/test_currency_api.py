@@ -1,6 +1,5 @@
 import pytest
 from django.urls import reverse
-from tracker.views import get_all_currencies
 from tracker.models import Currency
 
 @pytest.fixture
