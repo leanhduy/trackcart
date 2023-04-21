@@ -33,7 +33,6 @@ class TestCategoryAPI:
 
     def test_get_category_by_id_on_not_empty_database_should_pass(self, client, init_database):
         id = Category.objects.get(name="Food & Beverage").id
-        print("TESTING ID: ", id, type(id))
         url = reverse("get-one-category", kwargs={'pk': 1})
         response = client.get(url)
         assert response.status_code == 200

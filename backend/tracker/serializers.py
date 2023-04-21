@@ -1,7 +1,7 @@
 """This file contains all the serializers for the tracker app
 """
 from rest_framework import serializers
-from tracker.models import Currency, Category
+from tracker.models import Currency, Category, Wallet
 
 
 class CurrencySerializer(serializers.ModelSerializer):
@@ -13,4 +13,9 @@ class CurrencySerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
+        fields = "__all__"
+        
+class WalletSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Wallet
         fields = "__all__"
