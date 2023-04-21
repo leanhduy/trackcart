@@ -1,7 +1,12 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from tracker.serializers import CurrencySerializer, CategorySerializer, WalletSerializer
-from tracker.models import Currency, Category, Wallet
+from tracker.serializers import (
+    CurrencySerializer,
+    CategorySerializer,
+    WalletSerializer,
+    TransactionSerializer,
+)
+from tracker.models import Currency, Category, Wallet, Transaction
 
 
 # Create your views here.
@@ -47,4 +52,19 @@ def get_all_wallets(request):
 def get_single_wallet(request, pk):
     wallet = Wallet.objects.get(id=pk)
     serializer = WalletSerializer(wallet, many=False)
+    return Response(serializer.data)
+
+
+# * TRANSACTIONS VIEWS
+@api_view(["GET"])
+def get_all_transactions(request):
+    transactions = Transaction.objects.all()
+    serializer = TransactionSerializer(transactions, many=True)
+    return Response(serializer.data)
+
+
+@api_view(["GET"])
+def get_single_transaction(request, pk):
+    transaction = Transaction.objects.get(id=pk)
+    serializer = TransactionSerializer(transaction, many=False)
     return Response(serializer.data)

@@ -1,3 +1,6 @@
+"""
+This file contains the test class to test the Currency API.
+"""
 import pytest
 from django.urls import reverse
 from tracker.models import Currency
@@ -5,6 +8,7 @@ from tracker.models import Currency
 
 @pytest.fixture
 def init_database():
+    """This fixture is used to initialize the database with some data."""
     Currency.objects.create(name="Vietnam Dong", iso="VND")
 
 

@@ -9,6 +9,8 @@ from tracker.models import Category
 # Fixtures
 @pytest.fixture
 def init_database():
+    """This fixture is used to initialize the database with some data.
+    """
     Category.objects.create(
         name="Food & Beverage", cate_type="expense", sub_category="required"
     )

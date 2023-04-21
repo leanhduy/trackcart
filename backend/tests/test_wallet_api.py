@@ -11,6 +11,8 @@ from account.models import Profile
 # Fixtures
 @pytest.fixture
 def init_database():
+    """This fixture is used to initialize the database with some data.
+    """
     # Create User
     user = User.objects.create_user(
         username="testuser", email="test@example.com", password="123"

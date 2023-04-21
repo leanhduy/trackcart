@@ -8,4 +8,10 @@ urlpatterns = [
     path("categories/<int:pk>", views.get_single_category, name="get-one-category"),
     path("wallets", views.get_all_wallets, name="get-all-wallets"),
     path("wallets/<int:pk>", views.get_single_wallet, name="get-one-wallet"),
+    path("transactions", views.get_all_transactions, name="get-all-transactions"),
+    path(
+        "transactions/<int:pk>",
+        views.get_single_transaction,
+        name="get-one-transaction",
+    ),
 ]

@@ -6,6 +6,10 @@ from tracker.consts import SUB_CATEGORIES, TYPE_CHOICES
 
 
 class Category(models.Model):
+    """
+    Category model
+    """
+
     name = models.CharField(max_length=255)
     featured_icon = models.FileField(null=True, blank=True)
     cate_type = models.CharField(max_length=255, choices=TYPE_CHOICES)
@@ -21,6 +25,10 @@ class Category(models.Model):
 
 
 class Currency(models.Model):
+    """
+    Currency model
+    """
+
     name = models.CharField(max_length=255)
     iso = models.CharField(max_length=3)
 
@@ -32,6 +40,10 @@ class Currency(models.Model):
 
 
 class Wallet(models.Model):
+    """
+    Wallet model
+    """
+
     name = models.CharField(max_length=255)
     owner = models.ForeignKey(Profile, on_delete=models.CASCADE)
     currency = models.ForeignKey(Currency, on_delete=models.SET_NULL, null=True)
@@ -45,6 +57,10 @@ class Wallet(models.Model):
 
 
 class Transaction(models.Model):
+    """
+    Transaction model
+    """
+
     name = models.CharField(max_length=255)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     wallet = models.ForeignKey(Wallet, on_delete=models.CASCADE)
