@@ -1,19 +1,25 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
-  },
-  "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
-  }
+    "name": "frontend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "prettify": "prettier --write \"src/**/*.{vue,js,json}\""
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.11.7",
+        "bootstrap": "^5.2.3",
+        "core-js": "^3.8.3",
+        "jquery": "^3.6.4",
+        "popper.js": "^1.16.1",
+        "prettier": "^2.8.7",
+        "vue": "^3.2.13",
+        "vue-router": "^4.0.3"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~5.0.0",
+        "@vue/cli-plugin-router": "~5.0.0",
+        "@vue/cli-service": "~5.0.0"
+    }
 }
